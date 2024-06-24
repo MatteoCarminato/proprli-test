@@ -7,3 +7,5 @@ php artisan key:generate --ansi
 docker-compose up -d --build
 
 php artisan migrate --force
+
+php artisan db:seed

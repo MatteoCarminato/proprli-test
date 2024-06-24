@@ -7,9 +7,9 @@ Our clients operate in the real estate sector, managing multiple buildings withi
 ## Technical Requirements: 
 
 
-- Develop an application using Laravel 10 with REST architecture. 
-- Implement GET endpoint for listing tasks of a building along with their comments. 
-- Implement POST endpoint for creating a new task. 
+- Develop an application using Laravel 10 with REST architecture. ✓
+- Implement GET endpoint for listing tasks of a building along with their comments. ✓
+- Implement POST endpoint for creating a new task. ✓
 - Implement POST endpoint for creating a new comment for a task. 
 - Define the payload structure for task and comment creation, considering necessary relationships and information for possible filters. 
 - Implement filtering functionality, considering at least three filters such as date range of creation and assigned user, or task status and the building it belongs to.
