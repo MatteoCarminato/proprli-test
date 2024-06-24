@@ -18,6 +18,10 @@ use App\Http\Controllers\Api\CommentController;
 |
 */
 
+Route::get('/', function () {
+    return response()->json(['message' => 'live'], 200);
+});
+
 Route::apiResource('constructions', ConstructionController::class)->only(['index','store']);
 Route::apiResource('tasks', TaskController::class)->only(['index', 'store']);
 
