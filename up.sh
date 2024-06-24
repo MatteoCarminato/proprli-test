@@ -1,11 +1,11 @@
 #!/bin/bash
 
+sudo chmod -R 777 ./storage
+
 cp .env.example .env
 
-php artisan key:generate --ansi
+composer install
 
 docker-compose up -d --build
 
-php artisan migrate --force
-
-php artisan db:seed
+php artisan key:generate --ansi

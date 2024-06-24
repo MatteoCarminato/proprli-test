@@ -19,7 +19,11 @@ class CommentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created comment for a task in storage.
+     *
+     * @param StoreCommentRequest $request
+     * @param Task $task
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(StoreCommentRequest $request, Task $task)
     {

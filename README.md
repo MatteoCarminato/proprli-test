@@ -33,3 +33,20 @@ Our clients operate in the real estate sector, managing multiple buildings withi
 - Containerize the application using Docker. 
 - Type methods and parameters for improved code clarity. 
 - Include descriptive PHPDoc in the methods.
+
+
+
+## Installation Instructions:
+
+
+- The folder contains a file called Up.sh that will install the entire environment. Run the command inside the laravel folder
+```
+chmod +x up.sh
+chmod +x migrate.sh
+
+./up.sh
+./migrate.sh
+```
+- After running the command it will bring up laravel on port 8000, with the database, migrations and seeds
+
+- Inside the folder contains the file Proprli.postman_collection.json which has the import of routes to test in postman

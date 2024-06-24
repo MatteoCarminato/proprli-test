@@ -10,7 +10,10 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the tasks with optional filtering.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index(Request $request)
     {
@@ -40,7 +43,10 @@ class TaskController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created task in storage.
+     *
+     * @param StoreTaskRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(StoreTaskRequest $request)
     {
