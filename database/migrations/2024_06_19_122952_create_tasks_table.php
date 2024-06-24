@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->string('status');
             $table->enum('status', ['open', 'in_progress', 'completed', 'rejected'])->default('Open');
 
             $table->foreignId('construction_id')->constrained()
@@ -27,7 +26,7 @@ return new class extends Migration
             ->onDelete('cascade');
 
             $table->timestamps();
-            $table->softDelete();
+            $table->softDeletes();
         });
     }
 
