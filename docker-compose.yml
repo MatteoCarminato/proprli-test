@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - "8000:80"  # Porta do Apache dentro do contêiner é 80
+      - "8001:80"  # Porta do Apache dentro do contêiner é 80
     volumes:
       - .:/var/www/html
     depends_on:

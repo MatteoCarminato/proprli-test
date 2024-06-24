@@ -18,15 +18,8 @@ use App\Http\Controllers\Api\CommentController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResource('constructions', ConstructionController::class)->only(['index','store']);
+Route::apiResource('tasks', TaskController::class)->only(['index', 'store']);
 
-Route::apiResource('constructions', ConstructionController::class);
-
-Route::post('tasks', [TaskController::class, 'store']);
-Route::get('buildings/{building}/tasks', [TaskController::class, 'index']);
 Route::get('tasks/{task}/comments', [TaskController::class, 'comments']);
 Route::post('tasks/{task}/comments', [CommentController::class, 'store']);
-
-Route::get('tasks', [TaskController::class, 'index']);
