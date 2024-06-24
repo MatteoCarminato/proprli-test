@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCommentRequest;
+use App\Models\Comment;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -18,9 +21,17 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCommentRequest $request, Task $task)
     {
-        //
+        $validatedData = $request->validated();
+
+        $comment = new Comment([
+            'content' => $validatedData['content'],
+        ]);
+
+        $task->comments()->save($comment);
+
+        return response()->json(['data' => $comment], 201);
     }
 
     /**
