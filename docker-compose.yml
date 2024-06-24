@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db-proprli:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: laravel
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - laravel_network
+
+  laravel-proprli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8000:80"  # Porta do Apache dentro do contêiner é 80
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db-proprli
+    networks:
+      - laravel_network
+
+networks:
+  laravel_network:
+    driver: bridge
