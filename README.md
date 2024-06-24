@@ -50,3 +50,4 @@ chmod +x migrate.sh
 - After running the command it will bring up laravel on port 8000, with the database, migrations and seeds
 
 - Inside the folder contains the file Proprli.postman_collection.json which has the import of routes to test in postman
+- [Gravação de tela de 24-06-2024 13:21:44.webm](https://github.com/MatteoCarminato/proprli-test/assets/23380739/0cb72b9f-897b-49a9-921f-ec1999f51453)
