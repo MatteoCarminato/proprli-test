@@ -19,8 +19,21 @@ class TaskController extends Controller
         if ($request->has('status')) {
             $tasks->where('status', $request->status);
         }
-        
+
+        if ($request->has('user_id')) {
+            $tasks->where('user_id', $request->user_id);
+        }
+
+        if ($request->has('building_id')) {
+            $tasks->where('construction_id', $request->building_id);
+        }
+
+        if ($request->has('start_date') && $request->has('end_date')) {
+            $tasks->whereBetween('created_at', [$request->start_date, $request->end_date]);
+        }
+
         $tasks->with('comments');
+
         $tasks = $tasks->get();
 
         return response()->json(['data' => $tasks]);
