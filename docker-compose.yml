@@ -11,7 +11,10 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - laravel_network
+      proprli_test_network:
+        ipv4_address: 132.25.0.11  # IP específico para o PostgreSQL
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
   laravel-proprli:
     build:
@@ -25,8 +28,14 @@ services:
     depends_on:
       - db-proprli
     networks:
-      - laravel_network
+      - proprli_test_network
 
 networks:
-  laravel_network:
+  proprli_test_network:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 132.25.0.0/16
+
+volumes:
+  postgres_data:
